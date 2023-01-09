@@ -4,22 +4,20 @@
 #set -x
 
 EXIT_OK=0
-EXIT_WARNING=1
 EXIT_CRITICAL=2
-EXIT_UNKNOWN=3
 
 OUTPUT=""
 ERROR_OUTPUT=""
 RESULT=$EXIT_OK
 
 set_result() {
-	if [ $1 -gt $RESULT ]; then
+	if [ "$1" -gt $RESULT ]; then
 		RESULT=$EXIT_CRITICAL
 	fi
 }
 
 set_output() {
-        if [ $1 -ne 0 ]; then
+        if [ "$1" -ne 0 ]; then
                 ERROR_OUTPUT+="[CRITICAL] $2 seems to be stale"
                 ERROR_OUTPUT+='\n'
         else
