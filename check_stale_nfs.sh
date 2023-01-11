@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# For debugging
-#set -x
+# A small monitoring plugin to check
+# whether nfs mounts on the systems are "stale"
+# (probably the network connection to the server vanished or something similar).
+
+# For debugging enable the following
+# set -x
 
 EXIT_OK=0
 EXIT_CRITICAL=2
